@@ -105,7 +105,17 @@ function carritoHTML() {
         // Agrega el HTML del carrito en el tbody
         contendorCarrito.appendChild(row);
     });
+
+    // Agregar el carrito de compra al storagen del
+    sincronizarStorage();
+
 };
+
+
+function sincronizarStorage(){
+    localStorage.setItem('carrito', JSON.stringify(articulosCarritos) );
+};
+
 
 // Elimina los cursos del tbody
 
