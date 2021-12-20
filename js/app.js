@@ -11,6 +11,13 @@ function cargarEvenListeners() {
     listaCurso.addEventListener('click', agregarCurso);
     // Elimina cursos del carrito del
     carrito.addEventListener('click', eliminarCurso );
+    
+    // Muestra los curso del localStorage
+    document.addEventListener('DOMContentLoaded', () => {
+        articulosCarritos = JSON.parse( localStorage.getItem('carrito') ) || [];
+        carritoHTML();
+    });
+
     // Vaciar el carrito
     vaciarCarritoBtn.addEventListener('click', () =>{
         articulosCarritos = [];
